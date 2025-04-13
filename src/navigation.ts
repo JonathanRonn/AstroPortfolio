@@ -3,10 +3,6 @@ import { getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'About',
-      href: getPermalink('/about/')
-    },
-    {
       text: 'Projects',
       href: getPermalink('/projects/')
     },
@@ -23,11 +19,6 @@ export const headerData = {
 
 export const footerData = {
   links: [
-    {
-      text: 'About',
-      href: getPermalink('/about/'),
-      ariaLabel: 'About'
-    },
     {
       text: 'Projects',
       href: getPermalink('/projects/'),

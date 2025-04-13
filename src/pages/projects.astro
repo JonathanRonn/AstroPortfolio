@@ -1,0 +1,18 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Projects',
+};
+---
+
+<Layout metadata={metadata}>
+    <Hero
+    image={{ src: '~/assets/images/under-construction.webp', alt: 'Website under construction' }}
+    >
+    <Fragment slot="title">
+        <h1>Stay tuned ... new projects are coming</h1>
+    </Fragment>
+  </Hero>
+</Layout>
