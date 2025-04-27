@@ -1,7 +1,7 @@
 {
-  "name": "@onwidget/astrowind",
-  "version": "1.0.0-beta.50",
-  "description": "AstroWind: A free template using Astro 5.0 and Tailwind CSS. Astro starter theme.",
+  "name": "jonathanronn",
+  "version": "1.0.0",
+  "description": "Jonathan Ronn: A Canadian software developer and his portfolio.",
   "type": "module",
   "private": true,
   "engines": {
