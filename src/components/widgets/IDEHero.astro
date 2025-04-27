@@ -1,0 +1,90 @@
+---
+import CodeBlock from '~/components/ui/CodeBlock.astro';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  class?: string;
+}
+
+const { title, subtitle, class: className = '' } = Astro.props;
+
+// Split subtitle into paragraphs for better readability
+const subtitleParagraphs = subtitle.split('. ').map(sentence => sentence.trim());
+---
+
+<div class={`ide-hero ${className}`}>
+  <CodeBlock language="jonathan.html" class="max-w-4xl mx-auto">
+    <pre><code><span class="tag">&lt;h1&gt;</span><span class="string heading">{title}</span><span class="tag">&lt;/h1&gt;</span>
+{subtitleParagraphs.map((paragraph, index) => (
+  <>
+<span class="tag">&lt;p&gt;</span><span class="string">{paragraph}</span><span class="tag">&lt;/p&gt;</span>
+{index < subtitleParagraphs.length - 1 && <br />}
+  </>
+))}
+</code></pre>
+  </CodeBlock>
+</div>
+
+<style>
+  .ide-hero {
+    font-size: 1.25rem;
+    line-height: 1.75;
+  }
+  
+  .ide-hero :global(.heading) {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .ide-hero :global(pre) {
+    text-align: left;
+    padding-left: 0;
+  }
+  
+  .ide-hero :global(code) {
+    text-align: left;
+    display: block;
+  }
+  
+  .ide-hero :global(p) {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  .ide-hero :global(br) {
+    display: block;
+    content: "";
+    margin-top: 0.5rem;
+  }
+  
+  .ide-hero :global(.string) {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  /* Ensure all tags are aligned */
+  .ide-hero :global(.tag) {
+    display: inline-block;
+    min-width: 0;
+  }
+  
+  /* Ensure paragraphs start at the same position as h1 */
+  .ide-hero :global(pre code) {
+    padding-left: 0;
+  }
+  
+  .ide-hero :global(pre code > *) {
+    padding-left: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .ide-hero {
+      font-size: 1.5rem;
+    }
+    
+    .ide-hero :global(.heading) {
+      font-size: 3rem;
+    }
+  }
+</style> 

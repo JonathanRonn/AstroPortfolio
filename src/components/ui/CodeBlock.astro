@@ -1,0 +1,81 @@
+---
+interface Props {
+  language?: string;
+  showLineNumbers?: boolean;
+  class?: string;
+}
+
+const { 
+  language = 'html', 
+  showLineNumbers = true,
+  class: className = ''
+} = Astro.props;
+---
+
+<div class={`code-block ${className} bg-gray-900 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg`}>
+  <div class="flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-700 border-b border-gray-700 dark:border-gray-600">
+    <div class="flex space-x-2">
+      <div class="w-3 h-3 rounded-full bg-red-500"></div>
+      <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+      <div class="w-3 h-3 rounded-full bg-green-500"></div>
+    </div>
+    <div class="ml-4 text-xs text-gray-400">{language}</div>
+  </div>
+  <div class={`p-4 font-mono text-sm ${showLineNumbers ? 'line-numbers' : ''}`}>
+    <slot />
+  </div>
+</div>
+
+<style>
+  .code-block :global(pre) {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .code-block :global(code) {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    color: #e6e6e6;
+    text-align: left;
+    display: block;
+  }
+  
+  .code-block :global(.tag) {
+    color: #ff79c6;
+    display: inline-block;
+    min-width: 0;
+  }
+  
+  .code-block :global(.attr) {
+    color: #50fa7b;
+  }
+  
+  .code-block :global(.string) {
+    color: #f1fa8c;
+  }
+  
+  .code-block :global(.comment) {
+    color: #6272a4;
+  }
+  
+  .code-block :global(.line-number) {
+    color: #6272a4;
+    margin-right: 1rem;
+    user-select: none;
+  }
+  
+  .code-block :global(br) {
+    display: block;
+    content: "";
+    margin-top: 0.5rem;
+  }
+  
+  /* Ensure consistent alignment */
+  .code-block :global(pre code) {
+    padding-left: 0;
+  }
+  
+  .code-block :global(pre code > *) {
+    padding-left: 0;
+  }
+</style> 

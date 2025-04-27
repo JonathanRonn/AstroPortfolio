@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../Downloads/IBM_Plex_Serif"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.mdx": "markdown"
+		},
+		"prettier.documentSelectors": [
+			"**/*.astro"
+		]
+	}
+}

@@ -1,9 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import IDEHero from '~/components/widgets/IDEHero.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import TypeWriterText from '~/components/widgets/TypeWriterText.astro';
 
 const metadata = {
   title: 'Jonathan Ronn - Portfolio',
@@ -14,17 +13,11 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero>
-    <Fragment slot="title">
-     Jonathan Ronn
-    </Fragment>
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        Welcome to my portfolio! Thanks for stopping by. I’m a software developer passionate about building efficient, user-friendly solutions. Feel free to explore my projects to see what I’ve been working on, and don’t hesitate to reach out if you’d like to connect or collaborate.
-      </span
-      >
-    </Fragment>
-  </Hero>
+  <IDEHero 
+    title="Jonathan Ronn"
+    subtitle="Welcome to my portfolio! Thanks for stopping by. I'm a software developer passionate about building efficient, user-friendly solutions. Feel free to explore my projects to see what I've been working on, and don't hesitate to reach out if you'd like to connect or collaborate."
+    class="py-12 md:py-20"
+  />
 
   <!-- TODO: add skills section -->
 
