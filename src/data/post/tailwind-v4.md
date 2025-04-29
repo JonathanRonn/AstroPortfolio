@@ -1,8 +1,8 @@
 ---
-publishDate: 2025-04-12T00:00:00Z
+publishDate: 2025-04-27T00:00:00Z
 title: Tailwind v4 Review
-excerpt: While easy to get started, Astrowind is quite complex internally.  This page provides documentation on some of the more intricate parts.
-image: https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1651&q=80
+excerpt: I've been using Tailwind for quite some time. Tailwind CSS v4 is the latest major release of the popular utility-first CSS framework, focused on performance, simplicity, and modernization.
+image: https://res.cloudinary.com/dw3mw4zyt/image/upload/v1745806418/Tailwind_CSS_v4_Featured_qhlrbp.avif
 category: Frontend CSS
 tags:
   - tailwind css
@@ -11,48 +11,13 @@ metadata:
   canonical: https://jonathanronn.netlify.app
 ---
 
-import DListItem from '~/components/ui/DListItem.astro';
-import ToggleTheme from '~/components/common/ToggleTheme.astro';
+I recently upgraded a project to TailwindCSS v4, and overall, the experience has been really positive.
 
-## Overview
+First impressions: the hot reload speed is noticeably faster — changes appear almost instantly, making design iteration feel much more fluid and satisfying.
 
-It can be a somewhat daunting task trying to get a handle on _AstroWind_ internals, and particularly various points of usage.
+The upgrade process was pretty smooth too, thanks to the clear documentation and the handy `npx @tailwindcss/upgrade` command, which made most of the migration straightforward.
 
-This page outlines and clarifies some of the techniques found in _AstroWind_. Use it as a guide for further modification, or an instructional for techniques to use in your own endeavors.
+That said, I do have one grievance: the loss of the familiar tailwind.config.js file. I liked having a centralized place to manage themes, plugins, and project-specific settings. Without it, things feel a little less organized, and it’s definitely taking some time to adjust.
 
-## Styling
-
-<!-- As the name suggests, _AstroWind_ relies on _TailWind_ for styling. Furthermore, _AstroWind_ defines custom low level style settings which are incorporated into _TailWind_ seamlessly, and which provides consistency for higher level styling constructs, as well as enabling dark mode.
-
-The styling mechanism consists of the following files (all paths are prefixed with `/src/` ):
-
-<DListItem dt="assets/styles/tailwind.css">
-  This file is essentially an extension of _TailWind's_ base.css. High-level component styles are defined here. Note
-  also styling on elements selected by 'attribute' selectors at the bottom of the files, particularly those selected by
-  'data' attributes.
-</DListItem>
-<DListItem dt="components/CustomStyles.astro">
-  Defines custom colors and fonts. For these to take effect in the 'base.css' file, they need to be loaded in the html
-  header section. See next.
-</DListItem>
-<DListItem dt="layouts/Layout.astro">
-  This layout is used for all of the pages rendered by _AstroWind_. The contents of _tailwind.css_ and
-  _CustomStyles.astro_ component, described above, is injected into the html header.
-</DListItem> -->
-
-### Dark Mode
-
-<!-- _Dark Mode_ is triggered by the little 'sunlight' icon:<ToggleTheme/>in the page header. It is defined in the _components/common/ToggleTheme.astro_, but the event is attached and the action defined in _components/common/BasicScripts.astro_ in the following snippet:
-
-```javascript
-attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
-  if (defaultTheme.endsWith(':only')) {
-    return;
-  }
-  document.documentElement.classList.toggle('dark');
-  localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-});
-```
-
-Note that this is a client event. _BasicScripts.astro_ defines several other client-side functionality as well as this one. -->
+Still, I'm genuinely excited about some of the new features, especially the 3D transform utilities. I haven’t fully explored them yet, but they open up some exciting possibilities for creating more dynamic, interactive UIs.
 
