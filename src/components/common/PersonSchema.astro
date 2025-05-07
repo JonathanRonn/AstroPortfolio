@@ -1,0 +1,15 @@
+---
+const { name = "Jonathan Ronn", jobTitle = "Software Developer", url = "https://jonathanronn.netlify.app" } = Astro.props;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": name,
+  "jobTitle": jobTitle,
+  "url": url,
+  "sameAs": [
+    "https://www.linkedin.com/in/jonathan-ronn",
+    "https://github.com/JonathanRonn"
+  ]
+})}></script> 
