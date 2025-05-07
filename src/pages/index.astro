@@ -5,8 +5,20 @@ import IDEHero from '~/components/widgets/IDEHero.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
-  title: 'Jonathan Ronn - Portfolio',
+  title: 'Jonathan Ronn - Software Developer Portfolio',
+  description: 'Jonathan Ronn is a software developer specializing in creating efficient, user-friendly web applications and solutions. View projects and get in touch for collaboration opportunities.',
   ignoreTitleTemplate: true,
+  openGraph: {
+    title: 'Jonathan Ronn - Software Developer Portfolio',
+    description: 'Explore my projects and skills as a software developer. I build efficient, user-friendly web applications with modern technologies.',
+    images: [
+      {
+        url: '~/assets/images/jon-hero.png',
+        width: 1200,
+        height: 628,
+      },
+    ],
+  },
 };
 ---
 

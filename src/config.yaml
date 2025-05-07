@@ -3,18 +3,19 @@ site:
   site: 'https://jonathanronn.netlify.app'
   base: '/'
   trailingSlash: false
+  googleSiteVerificationId: '' # Add your Google verification ID here
 
 # Default SEO metadata
 metadata:
   title:
-    default: Jonathan Ronn
-    template: '%s — Portfolio'
-  description: "\U0001F680 Jonathan Ronn Professional Portfolio"
+    default: Jonathan Ronn - Software Developer
+    template: '%s — Jonathan Ronn'
+  description: "Jonathan Ronn - Software developer specializing in web applications, creating efficient and user-friendly solutions for modern businesses."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: JonathanRonn
+    site_name: Jonathan Ronn
     images:
       - url: '~/assets/images/jon-hero.png'
         width: 1200
@@ -52,7 +53,7 @@ apps:
       isEnabled: true
       pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
       robots:
-        index: false
+        index: true
 
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
@@ -60,7 +61,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: "G-XD4WYT1G19" # or "G-XXXXXXXXXX"
+      id: "GTM-T4278K5J" # or "G-XXXXXXXXXX"
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
