@@ -3,7 +3,7 @@ site:
   site: 'https://jonathanronn.netlify.app'
   base: '/'
   trailingSlash: false
-  googleSiteVerificationId: '' # Add your Google verification ID here
+  googleSiteVerificationId: 'onod5bNUL39k8RXFbhp_F50_sVibFsURYjWkpGPnwkE' # Add your Google verification ID here
 
 # Default SEO metadata
 metadata:
@@ -61,7 +61,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: "GTM-T4278K5J" # or "G-XXXXXXXXXX"
+      id: "G-VLZDSZ0RE2" # or "G-XXXXXXXXXX"
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
