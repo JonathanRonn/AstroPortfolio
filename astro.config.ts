@@ -57,7 +57,7 @@ export default defineConfig({
     Logger: 1,
   }), astrowind({
     config: './src/config.yaml',
-  }), partytown()],
+  })],
 
   image: {
     domains: ['cdn.pixabay.com'],
