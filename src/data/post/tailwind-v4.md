@@ -20,4 +20,3 @@ The upgrade process was pretty smooth too, thanks to the clear documentation and
 That said, I do have one grievance: the loss of the familiar tailwind.config.js file. I liked having a centralized place to manage themes, plugins, and project-specific settings. Without it, things feel a little less organized, and it’s definitely taking some time to adjust.
 
 Still, I'm genuinely excited about some of the new features, especially the 3D transform utilities. I haven’t fully explored them yet, but they open up some exciting possibilities for creating more dynamic, interactive UIs.
-
