@@ -1,16 +1,24 @@
 name: Lighthouse CI
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL to audit (leave empty for default URLs)'
+        required: false
+        default: ''
 
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+      
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v10
         with:
-          node-version: '22'
-      - name: Install Lighthouse CI
-        run: npm install -g @lhci/cli@0.12.x
-      - name: Run Lighthouse CI
-        run: lhci autorun --upload.target=temporary-public-storage
+          urls: |
+            ${{ inputs.url || 'https://jonathanronn.netlify.app/' }}
+            ${{ inputs.url || 'https://jonathanronn.netlify.app/blog' }}
+            ${{ inputs.url || 'https://jonathanronn.netlify.app/projects' }}
+          uploadArtifacts: true
+          temporaryPublicStorage: true
