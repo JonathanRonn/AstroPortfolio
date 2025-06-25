@@ -1,7 +1,7 @@
 ---
 publishDate: 2025-06-25T00:00:00Z
 title: Is Cursor the Future of Coding? My First Impressions
-excerpt: I've been using Tailwind for quite some time. Tailwind CSS v4 is the latest major release of the popular utility-first CSS framework, focused on performance, simplicity, and modernization.
+excerpt: My initial impressions of using Cursor, an AI-powered code editor.
 image: https://res.cloudinary.com/dw3mw4zyt/image/upload/v1745806418/cursor_wcmyw7.avif
 category: AI
 tags:
